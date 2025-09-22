@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Informasi Pelayanan Puskesmas</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .hero-banner {
+        background: linear-gradient(
+          135deg,
+          #2c5282 0%,
+          #3182ce 50%,
+          #4299e1 100%
+        );
+        color: white;
+        padding: 60px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-banner::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><defs><radialGradient id="a" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="white" stop-opacity="0.1"/><stop offset="100%" stop-color="white" stop-opacity="0"/></radialGradient></defs><circle cx="10" cy="10" r="1" fill="url(%23a)"/><circle cx="30" cy="15" r="1" fill="url(%23a)"/><circle cx="50" cy="5" r="1" fill="url(%23a)"/><circle cx="70" cy="12" r="1" fill="url(%23a)"/><circle cx="90" cy="8" r="1" fill="url(%23a)"/></svg>');
+        opacity: 0.3;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-title {
+        font-size: 3rem;
+        font-weight: 700;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        margin-bottom: 1rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.25rem;
+        opacity: 0.9;
+        margin-bottom: 2rem;
+      }
+
+      .services-section {
+        padding: 80px 0;
+        background-color: #f8f9fa;
+      }
+
+      .service-card {
+        background: white;
+        border-radius: 15px;
+        padding: 30px 25px;
+        height: 100%;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        border: none;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .service-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(135deg, #3182ce, #4299e1);
+        border-radius: 15px 15px 0 0;
+      }
+
+      .service-icon {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(135deg, #3182ce, #4299e1);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        margin-bottom: 20px;
+        position: relative;
+      }
+
+      .service-icon::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: inherit;
+        opacity: 0.3;
+        transform: scale(1.2);
+        z-index: -1;
+      }
+
+      .service-title {
+        color: #2d3748;
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      .service-content {
+        max-height: 300px;
+        overflow-y: auto;
+        padding-right: 10px;
+      }
+
+      .service-content::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      .service-content::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+      }
+
+      .service-content::-webkit-scrollbar-thumb {
+        background: #3182ce;
+        border-radius: 10px;
+      }
+
+      .service-content::-webkit-scrollbar-thumb:hover {
+        background: #2c5282;
+      }
+
+      .service-item {
+        padding: 8px 0;
+        border-bottom: 1px solid #e2e8f0;
+        color: #4a5568;
+        line-height: 1.6;
+      }
+
+      .service-item:last-child {
+        border-bottom: none;
+      }
+
+      .service-time {
+        color: #3182ce;
+        font-weight: 600;
+      }
+
+      .badge-custom {
+        background: linear-gradient(135deg, #3182ce, #4299e1);
+        color: white;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        margin: 2px;
+      }
+
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 2rem;
+        }
+        .service-card {
+          margin-bottom: 30px;
+        }
+        .services-section {
+          padding: 50px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Hero Banner Section -->
+    <section class="hero-banner">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-8 hero-content">
+            <h1 class="hero-title">
+              <i class="fas fa-hospital-user me-3"></i>
+              Puskesmas Sehat Bersama
+            </h1>
+            <p class="hero-subtitle">
+              Melayani Kesehatan Masyarakat dengan Profesional dan Terpercaya
+            </p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+              <span class="badge badge-custom">
+                <i class="fas fa-clock me-1"></i> Buka 24 Jam
+              </span>
+              <span class="badge badge-custom">
+                <i class="fas fa-user-md me-1"></i> Dokter Berpengalaman
+              </span>
+              <span class="badge badge-custom">
+                <i class="fas fa-heart me-1"></i> Pelayanan Prima
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Information Section -->
+    <section class="services-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <div class="main-card">
+              <div class="row text-center mb-4">
+                <div class="col-12">
+                  <h2 class="display-6 fw-bold text-dark mb-2">
+                    Jadwal dan Informasi Pelayanan
+                  </h2>
+                  <p class="text-muted">
+                    Informasi lengkap pelayanan kesehatan di Puskesmas kami
+                  </p>
+                </div>
+              </div>
+
+              <div class="row">
+                <!-- Jam Operasional Dokter -->
+                <div class="col-lg-3 col-md-6 service-column">
+                  <div class="service-icon">
+                    <i class="fas fa-user-md"></i>
+                  </div>
+                  <h3 class="service-title">Jam Praktik Dokter</h3>
+                  <div class="service-content">
+                    <div class="service-item">
+                      <strong>Dokter Umum</strong><br />
+                      <span class="service-time"
+                        >Senin - Jumat: 08:00 - 14:00</span
+                      ><br />
+                      <span class="service-time">Sabtu: 08:00 - 12:00</span>
+                    </div>
+                    <div class="service-item">
+                      <strong>Dokter Spesialis Anak</strong><br />
+                      <span class="service-time"
+                        >Selasa & Kamis: 13:00 - 16:00</span
+                      ><br />
+                      <span class="service-time">Sabtu: 09:00 - 12:00</span>
+                    </div>
+                    <div class="service-item">
+                      <strong>Dokter Gigi</strong><br />
+                      <span class="service-time"
+                        >Senin, Rabu, Jumat: 08:00 - 12:00</span
+                      ><br />
+                      <span class="service-time"
+                        >Selasa, Kamis: 13:00 - 17:00</span
+                      >
+                    </div>
+                    <div class="service-item">
+                      <strong>Dokter Kandungan</strong><br />
+                      <span class="service-time">Rabu: 08:00 - 14:00</span
+                      ><br />
+                      <span class="service-time">Jumat: 13:00 - 17:00</span>
+                    </div>
+                    <div class="service-item">
+                      <strong>Dokter Mata</strong><br />
+                      <span class="service-time"
+                        >Senin & Kamis: 14:00 - 17:00</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Layanan Unggulan -->
+                <div class="col-lg-3 col-md-6 service-column">
+                  <div class="service-icon">
+                    <i class="fas fa-star-of-life"></i>
+                  </div>
+                  <h3 class="service-title">Layanan Unggulan</h3>
+                  <div class="service-content">
+                    <div class="service-item">
+                      <strong>Pemeriksaan Kesehatan Umum</strong><br />
+                      Konsultasi dan pemeriksaan kesehatan menyeluruh
+                    </div>
+                    <div class="service-item">
+                      <strong>Imunisasi & Vaksinasi</strong><br />
+                      Program imunisasi rutin untuk bayi, anak, dan dewasa
+                    </div>
+                    <div class="service-item">
+                      <strong>Kesehatan Ibu & Anak (KIA)</strong><br />
+                      Pemeriksaan kehamilan, persalinan, dan perawatan bayi
+                    </div>
+                    <div class="service-item">
+                      <strong>Program Keluarga Berencana</strong><br />
+                      Konseling dan pelayanan kontrasepsi
+                    </div>
+                    <div class="service-item">
+                      <strong>Pengobatan Penyakit Kronis</strong><br />
+                      Diabetes, hipertensi, dan penyakit kronis lainnya
+                    </div>
+                    <div class="service-item">
+                      <strong>Pelayanan Gawat Darurat</strong><br />
+                      Siaga 24 jam untuk kasus emergency
+                    </div>
+                    <div class="service-item">
+                      <strong>Laboratorium</strong><br />
+                      Pemeriksaan darah, urine, dan tes kesehatan lainnya
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Fasilitas & Penunjang -->
+                <div class="col-lg-3 col-md-6 service-column">
+                  <div class="service-icon">
+                    <i class="fas fa-hospital"></i>
+                  </div>
+                  <h3 class="service-title">Fasilitas & Penunjang</h3>
+                  <div class="service-content">
+                    <div class="service-item">
+                      <strong>Ruang Tunggu Ber-AC</strong><br />
+                      Ruang tunggu nyaman dengan fasilitas lengkap
+                    </div>
+                    <div class="service-item">
+                      <strong>Apotek</strong><br />
+                      <span class="service-time"
+                        >Senin - Sabtu: 07:30 - 20:00</span
+                      ><br />
+                      <span class="service-time">Minggu: 08:00 - 15:00</span>
+                    </div>
+                    <div class="service-item">
+                      <strong>Laboratorium Klinik</strong><br />
+                      <span class="service-time"
+                        >Senin - Sabtu: 07:00 - 16:00</span
+                      ><br />
+                      Hasil lab siap dalam 2-4 jam
+                    </div>
+                    <div class="service-item">
+                      <strong>Ruang Observasi</strong><br />
+                      Fasilitas rawat inap sementara untuk observasi pasien
+                    </div>
+                    <div class="service-item">
+                      <strong>Ambulance</strong><br />
+                      Layanan ambulance 24 jam untuk rujukan
+                    </div>
+                    <div class="service-item">
+                      <strong>Parkir Luas</strong><br />
+                      Area parkir yang aman dan nyaman
+                    </div>
+                    <div class="service-item">
+                      <strong>WiFi Gratis</strong><br />
+                      Akses internet gratis untuk pasien dan keluarga
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Informasi Penting -->
+                <div class="col-lg-3 col-md-6 service-column">
+                  <div class="service-icon">
+                    <i class="fas fa-info-circle"></i>
+                  </div>
+                  <h3 class="service-title">Informasi Penting</h3>
+                  <div class="service-content">
+                    <div class="service-item">
+                      <strong>Pendaftaran Online</strong><br />
+                      Daftar melalui aplikasi mobile atau website resmi
+                    </div>
+                    <div class="service-item">
+                      <strong>Persyaratan Berobat</strong><br />
+                      • KTP/KK<br />
+                      • Kartu BPJS (jika ada)<br />
+                      • Surat rujukan (untuk spesialis)
+                    </div>
+                    <div class="service-item">
+                      <strong>Tarif Pelayanan</strong><br />
+                      • Konsultasi Umum: Rp 15.000<br />
+                      • Konsultasi Spesialis: Rp 50.000<br />
+                      • Pemeriksaan Lab: Sesuai jenis tes
+                    </div>
+                    <div class="service-item">
+                      <strong>Kontak Darurat</strong><br />
+                      <span class="service-time">Hotline: 119</span><br />
+                      <span class="service-time">WhatsApp: 0812-3456-7890</span>
+                    </div>
+                    <div class="service-item">
+                      <strong>Program Khusus</strong><br />
+                      • Posyandu setiap Rabu<br />
+                      • Penyuluhan kesehatan setiap Jumat<br />
+                      • Pemeriksaan gratis untuk lansia
+                    </div>
+                    <div class="service-item">
+                      <strong>Jam Operasional</strong><br />
+                      <span class="service-time"
+                        >Senin - Sabtu: 07:00 - 21:00</span
+                      ><br />
+                      <span class="service-time">Minggu: 08:00 - 15:00</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
