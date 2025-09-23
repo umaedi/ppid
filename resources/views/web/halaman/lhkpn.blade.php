@@ -177,10 +177,10 @@
     <section class="hero-banner">
       <div class="container">
         <div class="row justify-content-center text-center">
-          <div class="col-lg-8 hero-content">
+          <div class="col-lg-12 hero-content">
             <h1 class="hero-title">
               <i class="fas fa-hospital-user me-3"></i>
-             {{ $title }}
+              {{ $title }}
             </h1>
             {{-- <div class="d-flex justify-content-center gap-3 flex-wrap">
               <span class="badge badge-custom">
@@ -211,34 +211,42 @@
     </section>
     <section class="services-section">
       <div class="container">
-        <div class="card mb-3">
-          <div class="row g-0">
-            <div class="col-md-4">
-              <img src="{{ asset('assets/img/foto-komisaris.jpeg') }}" class="img-fluid rounded-start" alt="Foto komisaris" width="100%">
+        <p>
+        <a class="btn btn-primary" data-bs-toggle="collapse" href="#lhkpn2024" role="button" aria-expanded="false" aria-controls="lhkpn2024">
+            LHKPN 2024
+        </a>
+        <a class="btn btn-primary" data-bs-toggle="collapse" href="#lhkpn2025" role="button" aria-expanded="false" aria-controls="lhkpn2025">
+            LHKPN 2025
+        </a>
+        </p>
+        <div class="collapse show" id="lhkpn2024">
+            <div class="card card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Nama</th>
+                        <th scope="col">Jabatan</th>
+                        <th scope="col">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <th scope="row">1</th>
+                        <td>NOVI MARZANI BMY</td>
+                        <td>Direktur</td>
+                        <td>
+                            <a href="{{ asset('assets/documents/LHKPN-DIREKTUR.pdf') }}" target="_blank" class="badge bg-primary">Lihat dokumen</a>
+                        </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <p><strong>Nama:</strong> Drs. Tamami Akip - <span class="text-muted">komisaris</span></p>
-                
-                <p>
-                  Lahir di kota Menggala pada tahun 1958. <br>
-                  Diangkat sebagai Komisaris PT. Tulang Bawang Jaya pada tanggal 03 Juli 2019 
-                  dan diperpanjang pada tanggal 03 Juli 2023.
-                </p>
-
-                <p><strong>Perjalanan Karir:</strong></p>
-                <ol>
-                  <li>Kadis PU Bina Marga Kab. Tulang Bawang (2007–2008).</li>
-                  <li>Kepala Bandiklatda Kab. Tuba (2008–2013).</li>
-                  <li>Asisten Bidang Administrasi Sekdakab Tuba (2013–2016).</li>
-                  <li>Asisten Bidang Umum Sekdakab Tuba (2016–2017).</li>
-                  <li>Asisten Bidang Pengembangan Ekonomi Sekdakab Tuba (2017–2019).</li>
-                </ol>
-                <p><strong>Pendidikan</strong></p>
-                <p>Menyelesaikan pendidikan Sarjana pada IIP Depdagri</p>
-              </div>
+        </div>
+        <div class="collapse mt-3" id="lhkpn2025">
+            <div class="card card-body">
+             <strong>LHKPN 2025 belum tersedia!</strong> 
             </div>
-          </div>
         </div>
       </div>
     </section>

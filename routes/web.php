@@ -9,6 +9,9 @@ Route::view('/','web.home.index');
 Route::prefix('p')->group(function() {
     Route::get('/profil-perusahaan', [Web\TentangController::class, 'profil'])->name('web.profil');
     Route::get('/biodata-komisaris', [Web\TentangController::class, 'biodataKomisaris'])->name('web.biodata-komisaris');
+    Route::get('/biodata-direktur', [Web\TentangController::class, 'biodataDirektur'])->name('web.biodata-direktur');
+
+    Route::get('/lhkpn', [Web\LhkpnController::class, 'index'])->name('web.lhkpn');
 });
 //route auth
 Route::post('/user/login', Auth\LoginController::class)->middleware('guest')->name('login');

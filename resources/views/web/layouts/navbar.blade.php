@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
     <div class="container">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="/">
         <img
         src="{{ asset('assets/img/logo.png') }}"
         alt="Tulang Bawang Jaya Logo"
@@ -27,8 +27,8 @@
         <ul class="dropdown-menu">
         <li><a class="dropdown-item" href="{{ route('web.profil') }}">Profil perusahaan</a></li>
         <li><a class="dropdown-item" href="{{ route('web.biodata-komisaris') }}">Biodata komisaris</a></li>
-        <li><a class="dropdown-item" href="#">Dewan direksi</a></li>
-        <li><a class="dropdown-item" href="#">LHKPN</a></li>
+        <li><a class="dropdown-item" href="{{ route('web.biodata-direktur') }}">Biodata direktur</a></li>
+        <li><a class="dropdown-item" href="{{ route('web.lhkpn') }}">LHKPN</a></li>
         </ul>
     </li>
         <li class="nav-item">

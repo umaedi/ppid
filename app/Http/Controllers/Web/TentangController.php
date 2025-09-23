@@ -19,4 +19,10 @@ class TentangController extends Controller
             'title' => 'Biodata Komisaris'
         ]);
     }
+    public function biodataDirektur()
+    {
+        return view('web.halaman.direktur', [
+            'title' => 'Biodata Direktur'
+        ]);
+    }
 }

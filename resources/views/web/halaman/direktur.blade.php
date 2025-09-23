@@ -211,36 +211,53 @@
     </section>
     <section class="services-section">
       <div class="container">
-        <div class="card mb-3">
-          <div class="row g-0">
-            <div class="col-md-4">
-              <img src="{{ asset('assets/img/foto-komisaris.jpeg') }}" class="img-fluid rounded-start" alt="Foto komisaris" width="100%">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <p><strong>Nama:</strong> Drs. Tamami Akip - <span class="text-muted">komisaris</span></p>
-                
-                <p>
-                  Lahir di kota Menggala pada tahun 1958. <br>
-                  Diangkat sebagai Komisaris PT. Tulang Bawang Jaya pada tanggal 03 Juli 2019 
-                  dan diperpanjang pada tanggal 03 Juli 2023.
-                </p>
+  <div class="card mb-3">
+    <div class="row g-0">
+      <div class="col-md-5">
+        <img src="{{ asset('assets/img/foto-direktur.png') }}" class="img-fluid rounded-start" alt="Foto Direktur" width="100%">
+      </div>
+      <div class="col-md-7">
+        <div class="card-body">
+          <p><strong>Nama:</strong> Novi Marzani BMY, S.Sos., MH - <span class="text-muted">Direktur</span></p>
 
-                <p><strong>Perjalanan Karir:</strong></p>
-                <ol>
-                  <li>Kadis PU Bina Marga Kab. Tulang Bawang (2007–2008).</li>
-                  <li>Kepala Bandiklatda Kab. Tuba (2008–2013).</li>
-                  <li>Asisten Bidang Administrasi Sekdakab Tuba (2013–2016).</li>
-                  <li>Asisten Bidang Umum Sekdakab Tuba (2016–2017).</li>
-                  <li>Asisten Bidang Pengembangan Ekonomi Sekdakab Tuba (2017–2019).</li>
-                </ol>
-                <p><strong>Pendidikan</strong></p>
-                <p>Menyelesaikan pendidikan Sarjana pada IIP Depdagri</p>
-              </div>
-            </div>
-          </div>
+          <p>
+            Lahir di Menggala pada tanggal 02 November 1972. <br>
+            Menjabat sebagai Direktur BUMD Tulang Bawang periode 2022–2028.
+          </p>
+
+          <p><strong>Riwayat Pendidikan:</strong></p>
+          <ol>
+            <li>SDN Lebuh Dalam Menggala (1978–1985).</li>
+            <li>SMPN 3 Rawa Laut Bandar Lampung (1985–1988).</li>
+            <li>SMA Arjuna Enggal Bandar Lampung (1988–1991).</li>
+            <li>S1 Universitas Bandar Lampung (1992–1996).</li>
+            <li>S2 Universitas Bandar Lampung (2010–2012).</li>
+          </ol>
+
+          <p><strong>Riwayat Organisasi:</strong></p>
+          <ol>
+            <li>Ketua Bidang Politik SMPT Universitas Bandar Lampung (1993–1994).</li>
+            <li>Ketua Jurusan FISIPOL Universitas Bandar Lampung (1993–1995).</li>
+            <li>Pengurus HMI Cabang Bandar Lampung (1998–1999).</li>
+            <li>Pengurus KNPI Kota Bandar Lampung (2000–2004).</li>
+            <li>Pengurus Golkar Kab. Tulang Bawang (2000–2005).</li>
+            <li>Ketua KAHMI Tulang Bawang (2022–2028).</li>
+          </ol>
+
+          <p><strong>Perjalanan Karir:</strong></p>
+          <ol>
+            <li>Ketua Panwaslu Pilkada Bupati Tulang Bawang (2007).</li>
+            <li>Ketua Panwaslu Pilkada Gubernur Lampung (2008).</li>
+            <li>Ketua KPU Tulang Bawang (2009–2012).</li>
+            <li>Anggota DPRD Tulang Bawang (2014–2019).</li>
+            <li>Direktur BUMD Tulang Bawang (2022–2028).</li>
+          </ol>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
     </section>
 @endsection
 
