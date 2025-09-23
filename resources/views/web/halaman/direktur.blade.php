@@ -222,7 +222,7 @@
 
           <p>
             Lahir di Menggala pada tanggal 02 November 1972. <br>
-            Menjabat sebagai Direktur BUMD Tulang Bawang periode 2022–2028.
+            Menjabat sebagai Direktur BUMD Tulang Bawang periode 2023–2028.
           </p>
 
           <p><strong>Riwayat Pendidikan:</strong></p>

@@ -18,7 +18,7 @@
           </div>
           <div class="col-lg-6">
             <img
-              src="{{ asset('assets/img/tulangbawangjaya-hero-bg.jpg') }}"
+              src="{{ asset('assets/img/bumd-pertama-tulangbawang.jpeg') }}"
               alt="Ilustrasi Pelayanan BUMD"
               class="img-fluid rounded"
             />
