@@ -42,27 +42,30 @@
           <div class="col-lg-6">
             <h3 class="mb-4">Visi</h3>
             <p class="mb-4">
-              Menjadi BUMD terdepan yang berkontribusi dalam pembangunan ekonomi
-              daerah melalui pelayanan prima dan inovasi berkelanjutan.
+              Terwujudnya PT. Tulang Bawang Jaya (Perseroda) sebagai Badan Usaha Milik Daerah (BUMD) yang terbaik, Unggul, Profesional dan bermanfaat bagi masyarakat banyak
             </p>
 
             <h3 class="mb-4">Misi</h3>
             <ul class="list-unstyled">
               <li class="mb-3">
                 <i class="bi bi-check-circle-fill text-primary me-3"></i>
-                Memberikan pelayanan berkualitas tinggi kepada masyarakat
+                Memberikan sumbangan bagi peningkatan Perekonomian Daerah, melalui peningkatan investasi yang signifikan dan menguntungkan.
               </li>
               <li class="mb-3">
                 <i class="bi bi-check-circle-fill text-primary me-3"></i>
-                Mengembangkan usaha yang berkelanjutan dan menguntungkan
+                Menyelenggarakan berbagai kegiatan Usaha yang bermanfaat bagi masyarakat banyak.
               </li>
               <li class="mb-3">
                 <i class="bi bi-check-circle-fill text-primary me-3"></i>
-                Meningkatkan Pendapatan Asli Daerah (PAD)
+               Menjadi perintis kegiatan yang belum dapat dilaksanakan oleh sektor usaha mikro, kecil, dan koperasi.
               </li>
               <li class="mb-3">
                 <i class="bi bi-check-circle-fill text-primary me-3"></i>
-                Mendorong pertumbuhan ekonomi lokal
+               Membantu memberikan bimbingan secara aktif kepada pengusaha golongan ekonomi lemah, koperasi, dan kelompok-kelompok usaha kecil lainnya.
+              </li>
+              <li class="mb-3">
+                <i class="bi bi-check-circle-fill text-primary me-3"></i>
+               Memberikan pelayanan prima atas usaha jasa, penyediaan produk-produk berkualitas dan kompetitif demi kepuasan pelanggan dan masyarakat.
               </li>
             </ul>
           </div>
@@ -71,6 +74,7 @@
               src="{{ asset('assets/img/tim-tulangbawangjaya.jpeg') }}"
               alt="Tim Tulang Bawang Jaya"
               class="img-fluid rounded"
+              width="100%"
             />
           </div>
         </div>
@@ -327,9 +331,7 @@
                   <i class="bi bi-geo-alt-fill text-primary me-2"></i>Alamat
                 </h5>
                 <p class="text-muted">
-                  Jl. Contoh No. 123 
-                  Kota, Provinsi 12345 
-                  Indonesia
+                  JL. Lintas Timur Sumatera Kel. Menggala Selatan, Kec. Menggala, Tulang Bawang Lampung 34611
                 </p>
               </div>
 
@@ -337,14 +339,14 @@
                 <h5>
                   <i class="bi bi-telephone-fill text-primary me-2"></i>Telepon
                 </h5>
-                <p class="text-muted">+62 21 1234 5678</p>
+                <p class="text-muted">+6282145637241</p>
               </div>
 
               <div class="contact-item mb-4">
                 <h5>
                   <i class="bi bi-envelope-fill text-primary me-2"></i>Email
                 </h5>
-                <p class="text-muted">info@[nama-bumd].co.id</p>
+                <p class="text-muted">helpdesk.tulangbawangjaya.com</p>
               </div>
 
               <div class="contact-item mb-4">
@@ -353,7 +355,7 @@
                   Operasional
                 </h5>
                 <p class="text-muted">
-                  Senin - Jumat: 08.00 - 17.00
+                  Senin - Jumat: 08.00 - 16.00
                 </p>
               </div>
 

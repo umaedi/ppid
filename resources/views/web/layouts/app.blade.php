@@ -19,9 +19,10 @@
     />
     <meta property="og:image" content="{{ asset('assets/img/og_image.png') }}" />
     <meta property="og:type" content="website" />
-
+    
     <title>Tulang Bawang Jaya - Landing Page</title>
-
+    
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/favicon.png') }}">
     <!-- Bootstrap 5 CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"

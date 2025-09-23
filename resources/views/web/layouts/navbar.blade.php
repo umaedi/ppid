@@ -2,7 +2,7 @@
     <div class="container">
     <a class="navbar-brand" href="/">
         <img
-        src="{{ asset('assets/img/logo.png') }}"
+        src="{{ asset('assets/img/logo-bumd.jpeg') }}"
         alt="Tulang Bawang Jaya Logo"
         class="d-inline-block align-top"
         />

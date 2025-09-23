@@ -42,10 +42,10 @@
         <h5  class="text-white">Kontak Info</h5>
         <ul class="list-unstyled">
             <li>
-            <i class="bi bi-geo-alt me-2"></i>Jl. Contoh No. 123, Kota
+            <i class="bi bi-geo-alt me-2"></i>JL. Lintas Timur Sumatera Kel. Menggala Selatan, Kec. Menggala, Tulang Bawang Lampung 34611
             </li>
-            <li><i class="bi bi-telephone me-2"></i>+62 21 1234 5678</li>
-            <li><i class="bi bi-envelope me-2"></i>info@[nama-bumd].co.id</li>
+            <li><i class="bi bi-telephone me-2"></i>+6282145637241</li>
+            <li><i class="bi bi-envelope me-2"></i>helpdesk.tulangbawangjaya.com</li>
         </ul>
         </div>
     </div>
