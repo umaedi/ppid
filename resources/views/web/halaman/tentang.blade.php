@@ -240,6 +240,20 @@
               <div class="mb-4">
                 <div class="col-12">
                   <h2 class="display-6 fw-bold text-dark mb-2">
+                    Tanggal Berdiri
+                  </h2>
+                </div>
+              </div>
+              <p>PT. Tulang Bawang Jaya (Perseroda) merupakan Badan Usaha Milik Daerah (BUMD) Kabupaten Tulang Bawang yang didirikan pada tahun <strong>14 Desember 2006</strong></p>
+             </div>
+          </div>
+        </div>
+        <div class="row justify-content-center mb-4">
+          <div class="col-12">
+            <div class="main-card">
+              <div class="mb-4">
+                <div class="col-12">
+                  <h2 class="display-6 fw-bold text-dark mb-2">
                    Visi & Misi
                   </h2>
                 </div>
