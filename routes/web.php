@@ -1,111 +1,31 @@
 <?php
 
-namespace App\Http\Controllers;
-
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Web\TentangController;
+use App\Http\Controllers\Web\LhkpnController;
+use App\Http\Controllers\Web\DokumenController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\OTPController;
 
-Route::view('/','web.home.index');
+Route::view('/', 'web.home.index');
 
 Route::prefix('p')->group(function() {
-    Route::get('/tugas-fungsi', [Web\TentangController::class, 'tugasFungsi'])->name('web.tugas-fungsi');
-    Route::get('/profil-perusahaan', [Web\TentangController::class, 'profil'])->name('web.profil');
-    Route::get('/biodata-komisaris', [Web\TentangController::class, 'biodataKomisaris'])->name('web.biodata-komisaris');
-    Route::get('/biodata-direktur', [Web\TentangController::class, 'biodataDirektur'])->name('web.biodata-direktur');
+    Route::get('/tugas-fungsi', [TentangController::class, 'tugasFungsi'])->name('web.tugas-fungsi');
+    Route::get('/profil-perusahaan', [TentangController::class, 'profil'])->name('web.profil');
+    Route::get('/biodata-komisaris', [TentangController::class, 'biodataKomisaris'])->name('web.biodata-komisaris');
+    Route::get('/biodata-direktur', [TentangController::class, 'biodataDirektur'])->name('web.biodata-direktur');
 
-    Route::get('/lhkpn', [Web\LhkpnController::class, 'index'])->name('web.lhkpn');
+    Route::get('/lhkpn', [LhkpnController::class, 'index'])->name('web.lhkpn');
 });
 
-Route::get('/dokumen', [Web\DokumenController::class, 'index'])->name('web.dokumen');
+Route::get('/dokumen', [DokumenController::class, 'index'])->name('web.dokumen');
 
-//route auth
-Route::post('/user/login', Auth\LoginController::class)->middleware('guest')->name('login');
+// route auth
+Route::post('/user/login', LoginController::class)->middleware('guest')->name('login');
 
 Route::middleware('auth')->group(function () {
-    Route::controller(Auth\OTPController::class)->group(function () {
+    Route::controller(OTPController::class)->group(function () {
         Route::get('/otp', 'otp');
         Route::post('/verify-otp', 'verifyOtp');
     });
 });
-//akhir route auth
-
-Route::get('/puskesmas', [Web\PuskesController::class, 'index'])->name('puskes');
-Route::get('/puskesmas/{subdomain}/detail', [Web\PuskesController::class, 'showDetailPuskesmas']);
-
-
-// Route::middleware('subdomain')->group(function () {
-//     if (env('APP_ENV') == 'production') {
-//         $domain = 'tulangbawangkab.go.id';
-//     } else {
-//         $domain = 'localhost';
-//     }
-
-
-//     Route::domain(config('services.subdomain') . '.' . $domain)->group(function () {
-//         require __DIR__ . '/mpp.php';
-//     });
-
-//     Route::domain('{subdomain}.' . $domain)->group(function () {
-//         // Route::domain('{subdomain}.localhost')->group(function () {
-//         Route::get('/', Web\HomeController::class)->name('home');
-
-//         Route::controller(Web\BeritaController::class)->group(function () {
-//             Route::get('/berita', 'index')->name('berita');
-//             Route::get('/berita/{slug}', 'show')->name('berita.show');
-//         });
-
-//         Route::controller(Web\KategoriController::class)->group(function () {
-//             Route::get('/kategori/{slug}', 'index')->name('berita.index');
-//         });
-
-//         Route::controller(Web\HalamanController::class)->group(function () {
-//             Route::get('/halaman', 'index')->name('kontak');
-//             Route::get('/halaman/{slug}', 'show')->name('halaman.show');
-//         });
-
-//         Route::controller(Web\BerkasController::class)->group(function () {
-//             Route::get('/berkas', 'index')->name('berkas');
-//         });
-
-//         Route::controller(Web\HalamanSaranController::class)->group(function () {
-//             Route::get('/saran', 'index')->name('saran');
-//             Route::post('/saran/store', 'store')->name('saran.store');
-//         });
-
-//         Route::controller(Web\HalamanSurveiController::class)->group(function () {
-//             Route::get('/survei', 'index')->name('survei');
-//         });
-
-//         Route::controller(Web\HalamanIkmController::class)->group(function () {
-//             Route::get('/ikm', 'index')->name('ikm');
-//             Route::post('/ikm/store', 'store')->name('ikm.store');
-//         });
-//     });
-// });
-
-//route untuk menampilkan asset file
-// Route::controller(Web\FileController::class)->group(function () {
-//     Route::get('files/{type}/{year}/{filename}', 'thumbnail')->name('thumbnail');
-//     Route::get('files/{filename}', 'konten')->name('konten');
-//     Route::get('photo-pimpinan/{filename}', 'photoPimpinan')->name('photo-pimpinan');
-
-//     // berkas 
-//     Route::get('dokumen/{filename}', 'berkas')->name('dokumen');
-// });
-
-//module route mpp
-
-
-
-// if(request()->subdomain == 'config('services.subdomain')') {
-
-
-// } 
-
-//route untuk menampilkan asset file
-// Route::controller(Web\FileController::class)->group(function () {
-//     Route::get('files/{type}/{year}/{filename}', 'thumbnail')->name('thumbnail');
-//     Route::get('files/{filename}', 'konten')->name('konten');
-//     Route::get('photo-pimpinan/{filename}', 'photoPimpinan')->name('photo-pimpinan');
-//     Route::get('mpp-instansi/{filename}', 'mppInstansi')->name('mpp-instansi');
-//     Route::get('mpp-fasilitas/{filename}', 'mppFasilitas')->name('mpp-fasilitas');
-// });
