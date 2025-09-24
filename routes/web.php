@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 Route::view('/','web.home.index');
 
 Route::prefix('p')->group(function() {
-    Route::get('/tugas-fungsi', [Web\TentangController::class, 'tugasFungsi'])->name('web.tugas-fungsi');
+    Route::get('/tugas-fungsi', [Web\TentangController::class, 'tugasFungsi'])->name('web.tugas-fungsix');
     Route::get('/profil-perusahaan', [Web\TentangController::class, 'profil'])->name('web.profil');
     Route::get('/biodata-komisaris', [Web\TentangController::class, 'biodataKomisaris'])->name('web.biodata-komisaris');
     Route::get('/biodata-direktur', [Web\TentangController::class, 'biodataDirektur'])->name('web.biodata-direktur');
