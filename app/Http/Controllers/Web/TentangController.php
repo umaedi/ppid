@@ -25,4 +25,10 @@ class TentangController extends Controller
             'title' => 'Biodata Direktur'
         ]);
     }
+    public function tugasFungsi()
+    {
+        return view('web.halaman.tugas_fungsi', [
+            'title' => 'Tugas dan Fungsi BUMD'
+        ]);
+    }
 }

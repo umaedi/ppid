@@ -232,12 +232,20 @@
                     </thead>
                     <tbody>
                         <tr>
-                        <th scope="row">1</th>
-                        <td>NOVI MARZANI BMY</td>
-                        <td>Direktur</td>
-                        <td>
-                            <a href="{{ asset('assets/documents/LHKPN-DIREKTUR.pdf') }}" target="_blank" class="badge bg-primary">Lihat dokumen</a>
-                        </td>
+                          <th scope="row">1</th>
+                          <td>TAMAMI AKIP</td>
+                          <td>Komisaris</td>
+                          <td>
+                              <a href="{{ asset('assets/documents/LHKPN-KOMISARIS.pdf') }}" target="_blank" class="badge bg-primary">Lihat dokumen</a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">2</th>
+                          <td>NOVI MARZANI BMY</td>
+                          <td>Direktur</td>
+                          <td>
+                              <a href="{{ asset('assets/documents/LHKPN-DIREKTUR.pdf') }}" target="_blank" class="badge bg-primary">Lihat dokumen</a>
+                          </td>
                         </tr>
                     </tbody>
                 </table>
