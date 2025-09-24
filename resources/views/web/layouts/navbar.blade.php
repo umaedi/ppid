@@ -33,7 +33,7 @@
         </ul>
     </li>
         <li class="nav-item">
-            {{-- <a class="nav-link" href="{{ route('web.dokumen') }}">Dokumen</a> --}}
+            <a class="nav-link" href="{{ route('web.dokumen') }}">Dokumen</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#tentang">Publikasi</a>
