@@ -214,7 +214,7 @@
   <div class="card mb-3">
     <div class="row g-0">
       <div class="col-md-5">
-        <img src="{{ asset('assets/img/foto-direktur.png') }}" class="img-fluid rounded-start" alt="Foto Direktur" width="100%">
+        <img src="{{ asset('assets/img/foto-direktur.jpeg') }}" class="img-fluid rounded-start" alt="Foto Direktur" width="100%">
       </div>
       <div class="col-md-7">
         <div class="card-body">
