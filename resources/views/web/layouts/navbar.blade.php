@@ -25,7 +25,7 @@
         Tentang Kami
         </a>
         <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="/p/tugas-fungsi">Tugas dan Fungsi Pokok BUMD</a></li>
+        <li><a class="dropdown-item" href="{{ route('web.tugas-fungsi') }}">Tugas dan Fungsi Pokok BUMD</a></li>
         <li><a class="dropdown-item" href="{{ route('web.profil') }}">Profil perusahaan</a></li>
         <li><a class="dropdown-item" href="{{ route('web.biodata-komisaris') }}">Biodata komisaris</a></li>
         <li><a class="dropdown-item" href="{{ route('web.biodata-direktur') }}">Biodata direktur</a></li>
@@ -33,7 +33,7 @@
         </ul>
     </li>
         <li class="nav-item">
-            <a class="nav-link" href="/dokumen">Dokumen</a>
+            <a class="nav-link" href="{{ route('web.dokumen') }}">Dokumen</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#tentang">Publikasi</a>
