@@ -357,6 +357,9 @@
                     <li>Koperasi Sai Bumi Nengah Nyepur, 100 lembar saham Rp.1.000.000,-</li>
                     <li>Total Rp.19.181.000.000,-</li>
                 </ol>
+                <p>
+                  Pemerintah Kabupaten Tulang Bawang merupakan Pemegang Saham Mayoritas PT. Tulang Bawang Jaya (Perseroda) dengan kepemilikan saham sebesar 99,995% dan pemegang saham lainnya adalah Koperasi Sai Bumi Nengah Nyappur 0,005%
+                </p>
             </div>
           </div>
         </div>

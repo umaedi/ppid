@@ -168,7 +168,7 @@
           </div>
           <div class="col-lg-3 col-md-6 mb-4">
             <div class="stat-item">
-              <span class="stat-number" data-target="2010">0</span>
+              <span class="stat-number" data-target="2006">0</span>
               <div class="stat-label">Tahun Berdiri</div>
             </div>
           </div>
@@ -181,9 +181,9 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center mb-5">
-            <h2 class="section-title">Berita</h2>
+            <h2 class="section-title">Galeri</h2>
             <p class="section-subtitle">
-              Informasi kegiatan BUMD Tulang Bawang Jaya
+              Galeri kegiatan BUMD Tulang Bawang Jaya
             </p>
           </div>
         </div>
