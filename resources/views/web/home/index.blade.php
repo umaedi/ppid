@@ -228,6 +228,19 @@
               </h6>
             </div>
           </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div
+              class="gallery-item"
+              data-bs-toggle="modal"
+              data-bs-target="#galleryModal"
+              data-bs-image="{{ asset('assets/img/berita/kegiatan1.jpeg') }}"
+            >
+              <img src="{{ asset('assets/img/berita/kegiatan1.jpeg') }}" alt="Kegiatan 3" class="img-fluid" />
+              <h6 class="mt-3">
+                Kegiatan hari pertama Bimtek BUMD PT. Tulang Bawang Jaya oleh Tim dari BPKP  Perwakilan Prov. Lampung
+              </h6>
+            </div>
+          </div>
           </div>
         </div>
       </div>
