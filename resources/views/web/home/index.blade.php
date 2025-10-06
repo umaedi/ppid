@@ -3,7 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Open Graph Meta Tags -->
+    <meta
+      property="og:title"
+      content="PPID Tulang Bawang Jaya"
+    />
+    <meta
+      property="og:description"
+      content="Pejabat Pengelola Informasi dan Dokumentasi berkomitmen memberikan pelayanan informasi publik yang transparan dan akuntabel."
+    />
+    <meta property="og:image" content="{{ asset('assets/img/og_image.png') }}" />
+    <meta property="og:type" content="website" />
+
     <title>PPID - Pejabat Pengelola Informasi dan Dokumentasi</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/favicon.png') }}">
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
       rel="stylesheet"
@@ -252,7 +265,6 @@
     >
       <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="#beranda">
-          <i class="fas fa-building me-2 fs-4"></i>
           <span>PPID TULANG BAWANG JAYA</span>
         </a>
         <button
@@ -474,7 +486,7 @@
                   <i class="fas fa-clipboard-list text-primary me-2"></i>SOP
                   Pelayanan Informasi
                 </h5>
-                <p>Standar Operasional Prosedur PPID Instansi</p>
+                <p>Standar Operasional Prosedur PPID Tulang Bawang Jaya</p>
                 <a href="#" class="btn btn-sm btn-outline-primary"
                   >Download PDF</a
                 >
@@ -808,107 +820,106 @@
     </section>
 
     <!-- Berita / Pengumuman -->
-    <section class="py-5">
+    <section id="galeri" class="py-5 bg-light">
       <div class="container">
-        <h2 class="section-title text-center">Berita & Pengumuman</h2>
         <div class="row">
-          <div class="col-lg-4 mb-4">
-            <div class="card news-card">
-              <img
-                src="https://via.placeholder.com/400x200?text=Berita+1"
-                class="card-img-top"
-                alt="Berita 1"
-              />
-              <div class="card-body">
-                <small class="text-muted">
-                  <i class="fas fa-calendar me-1"></i>25 September 2025
-                </small>
-                <h5 class="card-title mt-2">Peluncuran Portal PPID Terbaru</h5>
-                <p class="card-text">
-                  Portal PPID telah diperbarui dengan fitur-fitur baru untuk
-                  meningkatkan pelayanan informasi publik kepada masyarakat.
-                </p>
-                <a href="#" class="btn btn-outline-primary"
-                  >Baca Selengkapnya</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 mb-4">
-            <div class="card news-card">
-              <img
-                src="https://via.placeholder.com/400x200?text=Berita+2"
-                class="card-img-top"
-                alt="Berita 2"
-              />
-              <div class="card-body">
-                <small class="text-muted">
-                  <i class="fas fa-calendar me-1"></i>20 September 2025
-                </small>
-                <h5 class="card-title mt-2">Workshop Keterbukaan Informasi</h5>
-                <p class="card-text">
-                  Dilaksanakan workshop untuk meningkatkan pemahaman ASN tentang
-                  implementasi keterbukaan informasi publik.
-                </p>
-                <a href="#" class="btn btn-outline-primary"
-                  >Baca Selengkapnya</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 mb-4">
-            <div class="card news-card">
-              <img
-                src="https://via.placeholder.com/400x200?text=Berita+3"
-                class="card-img-top"
-                alt="Berita 3"
-              />
-              <div class="card-body">
-                <small class="text-muted">
-                  <i class="fas fa-calendar me-1"></i>15 September 2025
-                </small>
-                <h5 class="card-title mt-2">Laporan Tahunan 2024</h5>
-                <p class="card-text">
-                  Telah diterbitkan laporan tahunan pelaksanaan keterbukaan
-                  informasi publik tahun 2024 yang dapat diakses melalui portal
-                  ini.
-                </p>
-                <a href="#" class="btn btn-outline-primary"
-                  >Baca Selengkapnya</a
-                >
-              </div>
-            </div>
+          <div class="col-lg-12 text-center mb-5">
+            <h2 class="section-title">Galeri</h2>
+            <p class="section-subtitle">
+              Galeri kegiatan BUMD Tulang Bawang Jaya
+            </p>
           </div>
         </div>
-
-        <!-- Pengumuman Penting -->
-        <div class="row mt-5">
-          <div class="col-12">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
             <div
-              class="alert alert-info d-flex align-items-center"
-              role="alert"
+              class="gallery-item"
+              data-bs-toggle="modal"
+              data-bs-target="#galleryModal"
+              data-bs-image="{{ asset('assets/img/berita/berita1.jpeg') }}"
             >
-              <i class="fas fa-bullhorn me-3 fs-4"></i>
-              <div>
-                <h5 class="alert-heading mb-2">Pengumuman Penting!</h5>
-                <p class="mb-0">
-                  Mulai tanggal 1 Oktober 2025, semua permohonan informasi
-                  publik dapat diajukan secara online melalui portal ini.
-                  Pelayanan tatap muka tetap tersedia sesuai jam operasional.
-                </p>
-              </div>
+              <img src="{{ asset('assets/img/berita/berita1.jpeg') }}" alt="Kegiatan 1" class="img-fluid" />
+              <h6 class="mt-3">
+                Kunjungan silaturahmi Direktur BUMD PT. Tulang Bawang Jaya
+              </h6>
             </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div
+              class="gallery-item"
+              data-bs-toggle="modal"
+              data-bs-target="#galleryModal"
+              data-bs-image="{{ asset('assets/img/berita/berita2.jpg') }}"
+            >
+              <img src="{{ asset('assets/img/berita/berita2.jpg') }}" alt="Kegiatan 2" class="img-fluid" />
+              <h6 class="mt-3">
+                PT.Tulang Bawang Jaya Menandatangani MOU Dengan Kejaksaan Negeri
+                Tulang Bawang
+              </h6>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div
+              class="gallery-item"
+              data-bs-toggle="modal"
+              data-bs-target="#galleryModal"
+              data-bs-image="{{ asset('assets/img/berita/berita3.jpg') }}"
+            >
+              <img src="{{ asset('assets/img/berita/berita3.jpg') }}" alt="Kegiatan 3" class="img-fluid" />
+              <h6 class="mt-3">
+                Hasil Udang Vaname 805 Petambak Dibeli BUMD Tulang Bawang Jaya
+              </h6>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div
+              class="gallery-item"
+              data-bs-toggle="modal"
+              data-bs-target="#galleryModal"
+              data-bs-image="{{ asset('assets/img/berita/kegiatan1.jpeg') }}"
+            >
+              <img src="{{ asset('assets/img/berita/kegiatan1.jpeg') }}" alt="Kegiatan 3" class="img-fluid" />
+              <h6 class="mt-3">
+                Kegiatan hari pertama Bimtek BUMD PT. Tulang Bawang Jaya oleh Tim dari BPKP  Perwakilan Prov. Lampung
+              </h6>
+            </div>
+          </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Gallery Modal -->
+    <div
+      class="modal fade"
+      id="galleryModal"
+      tabindex="-1"
+      aria-labelledby="galleryModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body text-center">
+            <img id="modalImage" src="" alt="Gallery Image" class="img-fluid" />
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Footer -->
     <footer id="kontak" class="footer">
       <div class="container">
         <div class="row">
           <div class="col-lg-4 mb-4">
-            <h5 class="text-white fw-bold">PPID Instansi</h5>
+            <h5 class="text-white fw-bold">PPID Tulang Bawang Jaya</h5>
             <p>
               Pejabat Pengelola Informasi dan Dokumentasi berkomitmen memberikan
               pelayanan informasi publik yang transparan dan akuntabel.
@@ -938,7 +949,7 @@
             <div class="mb-3">
               <i class="fas fa-envelope me-2"></i>
               <strong>Email:</strong><br />
-              ppid@instansi.go.id
+              helpdesk.tulangbawangjaya.com
             </div>
             <div class="mb-3">
               <i class="fas fa-clock me-2"></i>
@@ -956,7 +967,7 @@
         <hr class="my-4" style="border-color: #4a5568" />
         <div class="row align-items-center">
           <div class="col-md-6">
-            <p class="mb-0">&copy; 2025 PPID Instansi. Hak Cipta Dilindungi.</p>
+            <p class="mb-0">&copy; 2025 PPID Tulang Bawang Jaya. Hak Cipta Dilindungi.</p>
           </div>
           <div class="col-md-6 text-md-end">
             <a href="#" class="me-3">Kebijakan Privasi</a>
@@ -1102,16 +1113,6 @@
         });
       }, 5000);
 
-      // Back to top button functionality
-      const backToTopBtn = document.querySelector('a[href="#beranda"]');
-      window.addEventListener("scroll", function () {
-        if (window.scrollY > 300) {
-          backToTopBtn.style.opacity = "1";
-        } else {
-          backToTopBtn.style.opacity = "0.7";
-        }
-      });
-
       // Initialize tooltips if any
       const tooltipTriggerList = [].slice.call(
         document.querySelectorAll('[data-bs-toggle="tooltip"]')
@@ -1141,6 +1142,17 @@
         card.style.transform = "translateY(20px)";
         card.style.transition = "opacity 0.6s ease, transform 0.6s ease";
         observer.observe(card);
+      });
+
+       // Gallery modal functionality
+      const galleryItems = document.querySelectorAll(".gallery-item");
+      const modalImage = document.getElementById("modalImage");
+
+      galleryItems.forEach((item) => {
+        item.addEventListener("click", function () {
+          const imageSrc = this.getAttribute("data-bs-image");
+          modalImage.src = imageSrc;
+        });
       });
     </script>
   </body>
