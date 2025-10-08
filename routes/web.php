@@ -8,12 +8,14 @@ Route::view('/','web.home.index');
 
 Route::prefix('p')->group(function() {
     Route::get('/tugas-fungsi', [Web\TentangController::class, 'tugasFungsi'])->name('web.tugasFungsi');
-    Route::get('/profil-perusahaan', [Web\TentangController::class, 'profil'])->name('web.profil');
+    Route::get('/tentang-kami', [Web\TentangController::class, 'tentang'])->name('web.tentang-kami');
     Route::get('/biodata-komisaris', [Web\TentangController::class, 'biodataKomisaris'])->name('web.biodata-komisaris');
     Route::get('/biodata-direktur', [Web\TentangController::class, 'biodataDirektur'])->name('web.biodata-direktur');
 
     Route::get('/lhkpn', [Web\LhkpnController::class, 'index'])->name('web.lhkpn');
 });
+
+Route::get('/sop-pelayanan-informasi-publik', [WEB\SOPController::class, 'index'])->name('web.sop');
 
 Route::get('/dokumen', [Web\DokumenController::class, 'index'])->name('web.dokumen');
 

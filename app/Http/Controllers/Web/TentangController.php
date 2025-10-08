@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 
 class TentangController extends Controller
 {
-    public function profil()
+    public function tentang()
     {
         return view('web.halaman.tentang', [
-            'title' => 'Profil Perusahaan'
+            'title' => 'Tentang PPID'
         ]);
     }
     public function biodataKomisaris()

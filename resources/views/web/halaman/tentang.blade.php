@@ -180,31 +180,8 @@
           <div class="col-lg-8 hero-content">
             <h1 class="hero-title">
               <i class="fas fa-hospital-user me-3"></i>
-              Profil Perusahaan
+              {{ $title }}
             </h1>
-            {{-- <div class="d-flex justify-content-center gap-3 flex-wrap">
-              <span class="badge badge-custom">
-                <i class="fas fa-clock me-1"></i> Latar belakang
-              </span>
-              <span class="badge badge-custom">
-                <i class="fas fa-user-md me-1"></i> Visi & Misi
-              </span>
-              <span class="badge badge-custom">
-                <i class="fas fa-heart me-1"></i> Maksud dan Tujuan
-              </span>
-              <span class="badge badge-custom">
-                <i class="fas fa-heart me-1"></i> Struktur Organisasi
-              </span>
-              <span class="badge badge-custom">
-                <i class="fas fa-heart me-1"></i> Sumber Daya Manusia
-              </span>
-              <span class="badge badge-custom">
-                <i class="fas fa-heart me-1"></i> Permodalan 
-              </span>
-              <span class="badge badge-custom">
-                <i class="fas fa-heart me-1"></i> Bidang Usaha 
-              </span>
-            </div> --}}
           </div>
         </div>
       </div>
@@ -221,31 +198,18 @@
                   </h2>
                 </div>
               </div>
-              <p>PT. Tulang Bawang Jaya (Perseroda) merupakan Badan Usaha Milik Daerah (BUMD) Kabupaten Tulang Bawang yang didirikan dalam bentuk Perseroan Terbatas (PT) dengan Landasan Hukum sebagai berikut :</p>
-              <ol>
-                <li>Undang - Undang No. 1 Tahun 1995 yang telah diperbaharui dengan Undang-Undang No. 40 Tahun 2007 tentang Perseroan Terbatas (PT).</li>
-                <li>Peraturan Pemerintah Republik Indonesia No. 54 Tahun 2017 tentang Badan Usaha Milik Daerah.</li>
-                <li>Peraturan Menteri Dalam Negeri Republik Indonesia No. 118 Tahun 2018 tentang Rencana Bisnis, Rencana Kerja, dan Anggaran, serta Tata Cara Pembinaan Badan Usaha Milik Daerah.</li>
-                <li>Peraturan Daerah Kabupaten Tulang Bawang Nomor 4 Tahun 2006 tanggal 12 Juni 2006, tentang Badan Usaha Milik Daerah Kabupaten Tulang Bawang.</li>
-                <li>Peraturan Bupati Tulang Bawang Nomor 24 Tahun 2006 tanggal 14 Agustus 2006, tentang Pembentukan Badan Usaha Milik Daerah dalam bentuk PT. Tulang Bawang Jaya.</li>
-                <li>Peraturan Bupati Tulang Bawang Nomor 35 Tahun 2006 tanggal 12 Oktober 2006, tentang ketentuan – ketentuan Dewan Pengawas, Direksi, dan Kepegawaian Badan Usaha Milik Daerah PT. Tulang Bawang Jaya Kabupaten Tulang Bawang.</li>
-                <li>Akta Pendirian Perseroan Terbatas (PT) Tulang Bawang Jaya Nomor 09 tanggal 14 Desember 2006 yang dibuat dihadapan Notaris Cahya Witri Dediyah, yang telah beberapa kali mengalami perubahan terakhir dengan Akta Notaris Ridzki Ardhiati Syihab, M.Kn., S.H., Nomor 04 tanggal 05 Oktober 2023 mengenai Pernyataan Keputusan Rapat PT. Tulang Bawang Jaya.</li>
-                </ol>
+              <p>
+                Pembentukan PPID (Pejabat Pengelola Informasi dan Dokumentasi) adalah tindakan suatu Badan Publik untuk menunjuk pejabat yang bertanggung jawab atas penyimpanan, pendokumentasian, penyediaan, dan pelayanan informasi kepada masyarakat sesuai dengan Undang-Undang Nomor 14 Tahun 2008 tentang Keterbukaan Informasi Publik (UU KIP). Pembentukan ini dilakukan melalui penerbitan Surat Keputusan (SK) atau peraturan oleh pimpinan Badan Publik (misalnya Rektor, Gubernur, atau Menteri) dan bertujuan untuk mewujudkan pemerintahan yang transparan serta mempermudah akses masyarakat terhadap informasi publik. 
+                Dasar Hukum dan Tujuan
+                Amanat UU KIP: Dasar utama pembentukan PPID adalah UU KIP yang mewajibkan setiap Badan Publik untuk menyediakan informasi dan melayani permintaan informasi secara cepat, tepat waktu, dan sederhana. 
+                Meningkatkan Transparansi: Keberadaan PPID menciptakan mekanisme yang lebih terstruktur untuk penyampaian informasi, sehingga badan publik dapat lebih transparan dan akuntabel. 
+                Mempermudah Akses Informasi: PPID berfungsi sebagai "pintu tunggal" bagi masyarakat yang ingin mengajukan permohonan informasi, sehingga prosesnya menjadi lebih mudah dan efisien. 
+                Proses Pembentukan PPID
+                Penerbitan Aturan Internal: Pimpinan badan publik, seperti menteri, gubernur, atau rektor, menerbitkan Surat Keputusan (SK) atau peraturan (misalnya, Peraturan Rektor atau Peraturan Gubernur). 
+                Menunjuk Pejabat: SK tersebut kemudian berisi penunjukan pejabat yang akan bertanggung jawab sebagai PPID. 
+                Pembentukan Unit Kerja: Seringkali, PPID juga merujuk pada unit kerja atau organisasi yang dibentuk secara khusus untuk mengelola informasi dan dokumentasi Badan Publik. 
+              </p>
             </div>
-          </div>
-        </div>
-        <div class="row justify-content-center mb-4">
-          <div class="col-12">
-            <div class="main-card">
-              <div class="mb-4">
-                <div class="col-12">
-                  <h2 class="display-6 fw-bold text-dark mb-2">
-                    Tanggal Berdiri
-                  </h2>
-                </div>
-              </div>
-              <p>PT. Tulang Bawang Jaya (Perseroda) merupakan Badan Usaha Milik Daerah (BUMD) Kabupaten Tulang Bawang yang didirikan pada tahun <strong>14 Desember 2006</strong></p>
-             </div>
           </div>
         </div>
         <div class="row justify-content-center mb-4">
@@ -259,17 +223,24 @@
                 </div>
               </div>
               <p>
-                Pada dasarnya pembentukan BUMD PT. Tulang Bawang Jaya (Perseroda) dilakukan dengan maksud/tujuan agar dapat mengakses kegiatan-kegiatan yang bersifat komersial dalam rangka ikut membantu Pemkab Tulang Bawang meningkatkan PAD, mendorong pertumbuhan ekonomi, dan meningkatkan kesejahteraan masyrakat Tulang Bawang. Karena itu, ditetapkan Visi dan Misi sebagai berikut :
+                Visi Pejabat Pengelola Informasi dan Dokumentasi (PPID) adalah terwujudnya pelayanan informasi publik yang transparan, akuntabel, dan efektif, sementara misinya meliputi peningkatan pengelolaan informasi, pengembangan sistem layanan informasi, peningkatan kualitas SDM, dan penyediaan informasi yang cepat dan tepat sesuai amanat Undang-Undang Keterbukaan Informasi Publik. 
               </p>
               <h3>Visi</h3>
-              <p>“terwujudnya PT. Tulang Bawang Jaya (Perseroda) sebagai Badan Usaha Milik Daerah (BUMD) yang terbaik, Unggul, Profesional dan bermanfaat bagi masyarakat banyak.”</p>
+              <p>
+                Visi PPID pada umumnya adalah sebagai berikut:
+                Terwujudnya pelayanan informasi publik yang transparan dan akuntabel: untuk memenuhi hak masyarakat atas informasi. 
+                Menciptakan keterbukaan informasi: sebagai wujud peningkatan partisipasi masyarakat dan transparansi pemerintahan. 
+                Mewujudkan institusi yang transparan dan profesional: melalui pelayanan informasi publik yang berkualitas dan bermanfaat. 
+              </p>
               <h3>Misi</h3>
+              <p>Untuk mencapai visi tersebut, PPID memiliki beberapa misi, yaitu:</p>
               <ol>
-                <li>Memberikan sumbangan bagi peningkatan Perekonomian Daerah, melalui peningkatan investasi yang signifikan dan menguntungkan.</li>
-                <li>Menyelenggarakan berbagai kegiatan Usaha yang bermanfaat bagi masyarakat banyak.</li>
-                <li>Menjadi perintis kegiatan yang belum dapat dilaksanakan oleh sektor usaha mikro, kecil, dan koperasi.</li>
-                <li>Membantu memberikan bimbingan secara aktif kepada pengusaha golongan ekonomi lemah, koperasi, dan kelompok-kelompok usaha kecil lainnya.</li>
-                <li>Memberikan pelayanan prima atas usaha jasa, penyediaan produk-produk berkualitas dan kompetitif demi kepuasan pelanggan dan masyarakat.</li>
+                <li>Meningkatkan pengelolaan informasi dan dokumentasi: agar tertib, profesional, dan akuntabel. </li>
+                <li>Mengembangkan dan membangun sistem: penyediaan dan layanan informasi yang efisien dan mudah diakses.</li>
+                <li>Meningkatkan kualitas dan kompetensi sumber daya manusia (SDM): dalam bidang pelayanan informasi. </li>
+                <li>Menyediakan dan memberikan informasi publik yang benar, cepat, akurat, dan mudah: diakses oleh masyarakat.</li>
+                <li>Menjamin dan memberikan kepastian: dalam proses layanan informasi publik sesuai ketentuan perundang-undangan. </li>
+                <li>Mengelola informasi secara baik, efisien, serta mudah diakses: untuk melengkapi sarana prasarana yang mendukung.</li>
               </ol>
             </div>
           </div>
@@ -280,15 +251,14 @@
               <div class="mb-4">
                 <div class="col-12">
                   <h2 class="display-6 fw-bold text-dark mb-2">
-                   Maksud dan Tujuan
+                   Tugas dan Fungsi PPID 
                   </h2>
                 </div>
               </div>
-              <ol>
-                <li>Mencari laba (profit oriented) dan ikut memberikan kontribusi yang signifikan dalam peningkatan Pendapatan Asli Daerah (PAD).</li>
-                <li>Menggali, mengolah, dan mengembangkan seluruh potensi sumber daya alam dan sumber daya manusia yang ada, sebagai aset daerah untuk diberdayakan secara optimal sesuai dengan adat dan budaya setempat.</li>
-                <li>Menciptakan lapangan pekerjaan dan menyerap tenaga lokal untuk mengurangi pengangguran dan kemiskinan.</li>
-               </ol>
+              <p>Menyimpan dan mengelola informasi dan dokumentasi yang dimiliki Badan Publik.
+Menyediakan dan melayani permintaan informasi dari masyarakat.
+Memastikan informasi yang diberikan akurat, kredibel, dan mudah diakses.
+Dengan adanya PPID, diharapkan layanan informasi publik dapat berjalan lebih baik dan masyarakat lebih mudah dalam mendapatkan informasi yang dibutuhkan untuk berbagai keperluan.</p>
             </div>
           </div>
         </div>
@@ -303,91 +273,8 @@
                 </div>
               </div>
               <picture>
-                <img src="{{ asset('assets/img/struktur-organisasi.png') }}" alt="" width="100%">
+                <img src="{{ asset('assets/img/STRUKTUR PPID_page-0001.png') }}" alt="" width="100%">
               </picture>
-            </div>
-          </div>
-        </div>
-        <div class="row justify-content-center mb-4">
-          <div class="col-12">
-            <div class="main-card">
-              <div class="mb-4">
-                <div class="col-12">
-                  <h2 class="display-6 fw-bold text-dark mb-2">
-                   Sumber Daya Manusia
-                  </h2>
-                </div>
-              </div>
-              <p>
-                Pada tahun 2025formasi dan kondisi SDM PT. Tulang Bawang Jaya (Perseroda) adalah sebagai berikut 
-              </p>
-              <ol>
-                <li>Dewan Komisaris: 1 Orang</li>
-                <li>Direksi: 1 Orang</li>
-                <li>Pegawai Tetap: 7 Orang</li>
-                <li>Pegawai SPBU: 21 Orang</li>
-              </ol>
-            </div>
-          </div>
-        </div>
-        <div class="row justify-content-center mb-4">
-          <div class="col-12">
-            <div class="main-card">
-              <div class="mb-4">
-                <div class="col-12">
-                  <h2 class="display-6 fw-bold text-dark mb-2">
-                   Permodalan
-                  </h2>
-                </div>
-              </div>
-              <p>
-                Pada Tahun 2011-2025 PT. Tulang Bawang Jaya (Perseroda) tidak mendapatkan penyertaan Modal lagi.
-                Adapun rincian penyertaan modal yang sudah diterima PT. Tulang Bawang Jaya adalah sebagai berikut :
-              </p>
-              <ul class="list-group">
-                <li class="list-group-item">Penyertaan modal yang diterima s.d.2009  sebesar Rp.18.181.000.000,-</li>
-                <li class="list-group-item">Penyertaan modal tambahan tahun 2010 Rp.1.000.000.000,-</li>
-                <li class="list-group-item">Total penyertaan modal diterima	Rp.19.181.000.000,-</li>
-                </ul>
-                <p class="mt-3">
-                    Modal ini terbagi dalam 1.918.100 lembar saham @ Rp. 10.000,- yang terdiri dari :
-                </p>
-                <ol>
-                    <li>Pemkab Tulang Bawang 1.918.000 lembar saham	Rp.19.180.000.000,-</li>
-                    <li>Koperasi Sai Bumi Nengah Nyepur, 100 lembar saham Rp.1.000.000,-</li>
-                    <li>Total Rp.19.181.000.000,-</li>
-                </ol>
-                <p>
-                  Pemerintah Kabupaten Tulang Bawang merupakan Pemegang Saham Mayoritas PT. Tulang Bawang Jaya (Perseroda) dengan kepemilikan saham sebesar 99,995% dan pemegang saham lainnya adalah Koperasi Sai Bumi Nengah Nyappur 0,005%
-                </p>
-            </div>
-          </div>
-        </div>
-        <div class="row justify-content-center mb-4">
-          <div class="col-12">
-            <div class="main-card">
-              <div class="mb-4">
-                <div class="col-12">
-                  <h2 class="display-6 fw-bold text-dark mb-2">
-                   Bidang Usaha 
-                  </h2>
-                </div>
-              </div>
-              <p>
-                Berdasarkan Anggaran Dasar dan Anggaran Rumah Tangga (AD-ART) PT. Tulang Bawang Jaya (Perseroda), bahwa Kegiatan Usaha Perusahaan meliputi bidang usaha diantaranya:
-              </p>
-              <ol>
-                <li>Pertanian, Kehutanan, dan Perikanan.</li>
-                <li>Pertambangan dan Penggalian.</li>
-                <li>Pengadaan Listrik, Gas, Uap/Air Panas dan Udara Dingin.</li>
-                <li>Perdagangan Besar dan Eceran; Reparasi dan Perawatan Mobil dan Sepeda Motor.</li>
-                <li>Pengangkutan dan Pergudangan.</li>
-                <li>Kesenian, Hiburan, dan Rekreasi.</li>
-                </ol>
-                <p>
-                    Akan tetapi untuk sementara waktu, saat ini PT. Tulang Bawang Jaya bergerak di Bidang Perdagangan Eceran bahan bakar minyak berupa Unit Usaha SPBU.
-                    Demikian Profil BUMD PT. Tulang Bawang Jaya (Perseroda) tahun 2025.
-                </p>
             </div>
           </div>
         </div>
