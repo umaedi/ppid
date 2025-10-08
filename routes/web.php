@@ -15,7 +15,7 @@ Route::prefix('p')->group(function() {
     Route::get('/lhkpn', [Web\LhkpnController::class, 'index'])->name('web.lhkpn');
 });
 
-Route::get('/sop-pelayanan-informasi-publik', [WEB\SOPController::class, 'index'])->name('web.sop');
+Route::get('/sop-pelayanan-informasi-publik', [Web\SOPController::class, 'index'])->name('web.sop');
 
 Route::get('/dokumen', [Web\DokumenController::class, 'index'])->name('web.dokumen');
 
