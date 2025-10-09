@@ -44,9 +44,9 @@
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="{{ route('web.sop') }}">SOP Layanan Informasi Publik</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="{{ route('web.sopPenetapan') }}">SOP Penanganan Keberatan Informasi Publik</a></li>
+            <li><a class="dropdown-item" href="{{ route('web.sopPenetapan') }}">SOP Penetapan Dan Pemutakhiran Daftar Informasi Publik</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="{{ route('web.sopKeberatan') }}">SOP Penetapan Dan Pemutakhiran Daftar Informasi Publik</a></li>
+            <li><a class="dropdown-item" href="{{ route('web.sopKeberatan') }}">SOP Penanganan Keberatan Informasi Publik</a></li>
           </ul>
             </li>
               <li class="nav-item">
