@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Landing Page - Print Struk (Web Bluetooth)</title>
+    <style>
+      body {
+        font-family: Inter, Roboto, system-ui, -apple-system, "Segoe UI", Arial;
+        background: #f5f7fb;
+        color: #111;
+        padding: 28px;
+      }
+      .card {
+        background: #fff;
+        border-radius: 12px;
+        padding: 18px;
+        box-shadow: 0 6px 18px rgba(20, 20, 40, 0.06);
+        max-width: 920px;
+        margin: 0 auto;
+      }
+      h1 {
+        margin: 0 0 12px 0;
+        font-size: 20px;
+      }
+      .row {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 12px;
+      }
+      button {
+        padding: 10px 14px;
+        border-radius: 8px;
+        border: 0;
+        cursor: pointer;
+        background: #2563eb;
+        color: white;
+      }
+      button.secondary {
+        background: #6b7280;
+      }
+      button.warn {
+        background: #dc2626;
+      }
+      .status {
+        margin-top: 8px;
+        font-size: 13px;
+        color: #374151;
+      }
+      textarea {
+        width: 100%;
+        min-height: 140px;
+        resize: vertical;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #e5e7eb;
+        font-family: monospace;
+        font-size: 13px;
+      }
+      input[type="file"] {
+        display: block;
+        margin-top: 6px;
+      }
+      .small {
+        font-size: 13px;
+        color: #6b7280;
+      }
+      .info {
+        background: #eef2ff;
+        color: #312e81;
+        padding: 10px;
+        border-radius: 8px;
+        margin-bottom: 12px;
+      }
+      .flex-between {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+      }
+      .controls {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .spinner {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        border: 2px solid rgba(0, 0, 0, 0.08);
+        border-top-color: #2563eb;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        vertical-align: middle;
+        margin-right: 8px;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .meta {
+        margin-top: 10px;
+        font-size: 13px;
+        color: #374151;
+      }
+      .kbd {
+        font-family: monospace;
+        background: #111827;
+        color: #fff;
+        padding: 2px 6px;
+        border-radius: 6px;
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="flex-between">
+        <div>
+          <h1>Print Struk — Demo Web Bluetooth</h1>
+          <div class="small">
+            Pastikan membuka lewat <span class="kbd">https://</span> (atau
+            <span class="kbd">http://localhost</span>) dan gunakan Chrome/Edge
+          </div>
+        </div>
+        <div class="controls">
+          <button id="connect-button">Connect Printer</button>
+          <button id="disconnect-button" class="secondary">Disconnect</button>
+          <button id="print-sample" class="secondary">Print Sample</button>
+        </div>
+      </div>
+
+      <div class="info" id="info">
+        <strong>Catatan:</strong> Web Bluetooth hanya berfungsi di HTTPS
+        (kecuali localhost). Tidak semua printer BLE mendukung ESC/POS. Jika
+        koneksi gagal, periksa izin & protokol printer.
+      </div>
+
+      <div class="row">
+        <div style="flex: 1">
+          <label for="json-input" class="small"
+            ><strong>Data Struk (JSON)</strong></label
+          >
+          <textarea
+            id="json-input"
+            placeholder='Tempel JSON data disini, atau klik "Print Sample"'
+          ></textarea>
+          <div class="meta">
+            <button id="pretty-json" class="secondary">
+              Format / Validate JSON
+            </button>
+            <span id="status" class="status"
+              >Status: <em id="status-text">Belum tersambung</em></span
+            >
+          </div>
+        </div>
+        <div style="width: 320px">
+          <label class="small"><strong>Device Info</strong></label>
+          <div
+            id="device-info"
+            style="
+              padding: 12px;
+              border-radius: 8px;
+              border: 1px dashed #e5e7eb;
+              min-height: 120px;
+            "
+          >
+            <div><strong>Nama:</strong> <span id="device-name">-</span></div>
+            <div><strong>ID:</strong> <span id="device-id">-</span></div>
+            <div>
+              <strong>Connected:</strong>
+              <span id="device-connected">false</span>
+            </div>
+            <div style="margin-top: 8px">
+              <strong>Characteristic:</strong> <span id="char-uuid">-</span>
+            </div>
+          </div>
+
+          <label class="small" style="margin-top: 10px; display: block"
+            ><strong>Ambil JSON dari file</strong></label
+          >
+          <input id="file-json" type="file" accept="application/json" />
+        </div>
+      </div>
+
+      <div style="margin-top: 12px">
+        <details>
+          <summary class="small">Debug & Tips</summary>
+          <ul class="small">
+            <li>
+              Gunakan printer yang mendukung BLE GATT dan service/characteristic
+              yang kita pakai (UUID service:
+              <code>000018f0-0000-1000-8000-00805f9b34fb</code>).
+            </li>
+            <li>
+              Jika printer tidak merespon, coba tulis plain text tanpa ESC/POS,
+              atau cek dokumentasi printer.
+            </li>
+            <li>Kami menambahkan delay antar-chunk BLE untuk stabilitas.</li>
+          </ul>
+        </details>
+      </div>
+    </div>
+
+    <script>
+      /*
+  Versi landing page yang memperbaiki/mengintegrasikan kode JS user:
+  - perbaikan alert, reconnect, delay antar-chunk
+  - caching service/characteristic
+  - UI sederhana untuk connect/print/disconnect
+*/
+
+      const connectButton = document.getElementById("connect-button");
+      const disconnectButton = document.getElementById("disconnect-button");
+      const printSampleBtn = document.getElementById("print-sample");
+      const statusText = document.getElementById("status-text");
+      const deviceNameEl = document.getElementById("device-name");
+      const deviceIdEl = document.getElementById("device-id");
+      const deviceConnectedEl = document.getElementById("device-connected");
+      const charUuidEl = document.getElementById("char-uuid");
+      const jsonInput = document.getElementById("json-input");
+      const prettyJsonBtn = document.getElementById("pretty-json");
+      const fileJson = document.getElementById("file-json");
+
+      let connectedDevice = null;
+      let cachedServer = null;
+      let cachedService = null;
+      let cachedCharacteristic = null;
+
+      // Utility: sleep
+      function sleep(ms) {
+        return new Promise((resolve) => setTimeout(resolve, ms));
+      }
+
+      function setStatus(message, busy = false) {
+        statusText.textContent = message;
+        if (busy) {
+          if (!document.getElementById("spin")) {
+            const sp = document.createElement("span");
+            sp.id = "spin";
+            sp.className = "spinner";
+            statusText.parentNode.insertBefore(sp, statusText);
+          }
+        } else {
+          const sp = document.getElementById("spin");
+          if (sp) sp.remove();
+        }
+      }
+
+      function updateDeviceInfoUI() {
+        deviceNameEl.textContent = connectedDevice
+          ? connectedDevice.name || "-"
+          : "-";
+        deviceIdEl.textContent = connectedDevice
+          ? connectedDevice.id || "-"
+          : "-";
+        deviceConnectedEl.textContent =
+          connectedDevice &&
+          connectedDevice.gatt &&
+          connectedDevice.gatt.connected
+            ? "true"
+            : "false";
+        charUuidEl.textContent = cachedCharacteristic
+          ? cachedCharacteristic.uuid
+          : "-";
+      }
+
+      // ----- Get Printer (requestDevice) -----
+      async function getPrinter() {
+        try {
+          setStatus("Meminta izin akses Bluetooth...", true);
+
+          const device = await navigator.bluetooth.requestDevice({
+            filters: [
+              { namePrefix: "RPP" },
+              { namePrefix: "Thermal" },
+              { namePrefix: "POS" },
+            ],
+            optionalServices: ["000018f0-0000-1000-8000-00805f9b34fb"],
+          });
+
+          alert(`Perangkat berhasil dipilih: ${device.name || device.id}`);
+          return device;
+        } catch (e) {
+          alert("Perangkat gagal tersambung atau izin ditolak.");
+          console.error("Perangkat gagal tersambung, Error:", e);
+          setStatus("Permintaan Bluetooth dibatalkan atau gagal.");
+          return null;
+        } finally {
+          setStatus("Siap");
+        }
+      }
+
+      // ----- Connect (and cache service/characteristic) -----
+      async function connectToPrinter(device) {
+        if (!device) return null;
+        try {
+          setStatus("Menyambungkan ke printer...", true);
+
+          // reconnect if needed
+          if (device.gatt && device.gatt.connected) {
+            console.log("Device sudah connected.");
+            cachedServer = device.gatt;
+          } else {
+            cachedServer = await device.gatt.connect();
+          }
+
+          // Ambil service + characteristic (cache)
+          cachedService = await cachedServer.getPrimaryService(
+            "000018f0-0000-1000-8000-00805f9b34fb"
+          );
+          // Note: karakteristic user sebelumnya pakai 00002af1...
+          cachedCharacteristic = await cachedService.getCharacteristic(
+            "00002af1-0000-1000-8000-00805f9b34fb"
+          );
+
+          connectedDevice = device;
+
+          // event: device disconnected
+          device.addEventListener("gattserverdisconnected", async () => {
+            console.warn("Printer terputus.");
+            setStatus("Printer terputus.");
+            deviceConnectedEl.textContent = "false";
+            // Optionally auto-reconnect logic could be added here
+          });
+
+          updateDeviceInfoUI();
+          setStatus("Terhubung ke printer.");
+          return {
+            device,
+            server: cachedServer,
+            service: cachedService,
+            characteristic: cachedCharacteristic,
+          };
+        } catch (e) {
+          console.error("Gagal connect ke printer:", e);
+          setStatus("Gagal menyambungkan ke printer.");
+          return null;
+        } finally {
+          setTimeout(() => setStatus("Siap"), 800);
+        }
+      }
+
+      // ----- Disconnect -----
+      async function disconnectPrinter() {
+        try {
+          if (
+            connectedDevice &&
+            connectedDevice.gatt &&
+            connectedDevice.gatt.connected
+          ) {
+            connectedDevice.gatt.disconnect();
+            setStatus("Printer diputus.");
+          }
+        } catch (e) {
+          console.warn("Error saat disconnect:", e);
+        } finally {
+          connectedDevice = null;
+          cachedServer = null;
+          cachedService = null;
+          cachedCharacteristic = null;
+          updateDeviceInfoUI();
+        }
+      }
+
+      // ----- sendChunks with delay -----
+      async function sendChunks(characteristic, dataUint8, chunkSize = 180) {
+        // dataUint8 is a Uint8Array
+        let offset = 0;
+        while (offset < dataUint8.length) {
+          const end = Math.min(offset + chunkSize, dataUint8.length);
+          const chunk = dataUint8.slice(offset, end);
+          try {
+            await characteristic.writeValue(chunk);
+          } catch (err) {
+            console.error("Write chunk failed:", err);
+            throw err;
+          }
+          offset = end;
+          // small delay to avoid overrun on some printers
+          await sleep(40);
+        }
+      }
+
+      // ----- helpers for formatting -----
+      function formatRibuan(number) {
+        let n = typeof number === "string" ? parseFloat(number) : number || 0;
+        // replace dot (.) thousand separator with '.' for id format if needed; keep default
+        // Return string
+        try {
+          return n.toLocaleString("id-ID");
+        } catch {
+          return String(n);
+        }
+      }
+
+      // split string into array of substrings where each substring's byte length <= maxBytes
+      function splitByByteLength(str, maxBytes) {
+        const encoder = new TextEncoder();
+        const out = [];
+        let current = "";
+        for (const ch of str) {
+          const test = current + ch;
+          if (encoder.encode(test).length <= maxBytes) {
+            current = test;
+          } else {
+            if (current.length === 0) {
+              // single char exceeds maxBytes -> push char anyway
+              out.push(ch);
+            } else {
+              out.push(current);
+              current = ch;
+            }
+          }
+        }
+        if (current.length) out.push(current);
+        return out;
+      }
+
+      function padRightByChars(str, totalChars) {
+        // crude padEnd by chars (not bytes)
+        return str.padEnd(totalChars, " ");
+      }
+      function padLeftByChars(str, totalChars) {
+        return str.padStart(totalChars, " ");
+      }
+
+      // format row, using byte-width approximations
+      function formatRow(name, qty, price) {
+        // widths in characters (approx)
+        const nameBytes = 32; // allow ~32 bytes for name column
+        const qtyWidth = 6;
+        const priceWidth = 12;
+
+        const encoder = new TextEncoder();
+
+        const nameLines = splitByByteLength(String(name), nameBytes);
+        let out = "";
+        for (let i = 0; i < nameLines.length - 1; i++) {
+          out += padRightByChars(nameLines[i], 32) + "\n";
+        }
+        // last line: put qty and price
+        const last = nameLines[nameLines.length - 1] || "";
+        const qtyStr = String(qty ?? "");
+        const priceStr = String(price ?? "");
+        const leftPart = padRightByChars(last, 32); // assume 32 chars for name column
+        out +=
+          leftPart +
+          padLeftByChars(qtyStr, qtyWidth) +
+          padLeftByChars(priceStr, priceWidth);
+        return out;
+      }
+
+      // ----- Build receipt text (ESC/POS) -----
+      function buildReceiptText(data) {
+        // encoder we'll use later
+        let receipt = "";
+        receipt += "\x1B\x40"; // reset
+        receipt += "\x1B\x61\x01"; // center
+        receipt += "\x1B\x21\x10"; // bold + double-size maybe
+        receipt += (data.store?.name || "-") + "\n";
+        receipt += "\x1B\x21\x00";
+        receipt += (data.store?.address || "-") + "\n";
+        if (data.store?.phone) receipt += "Telp: " + data.store.phone + "\n";
+        receipt += "================================\n";
+        receipt += "\x1B\x61\x00"; // left
+
+        receipt +=
+          "Kode Transaksi: " + (data.order?.transaction_number || "-") + "\n";
+        receipt +=
+          "Pembayaran: " + (data.order?.payment_method?.name || "-") + "\n";
+        receipt +=
+          "Tanggal: " + (data.date || new Date().toLocaleString()) + "\n";
+        receipt += "================================\n";
+        receipt += formatRow("Nama Barang", "Qty", "Harga") + "\n";
+        receipt += "--------------------------------\n";
+
+        let total = 0;
+        (data.items || []).forEach((item) => {
+          const price = item.product?.price ?? item.price ?? 0;
+          const qty = item.quantity ?? 1;
+          receipt +=
+            formatRow(
+              item.product?.name || item.name || "-",
+              qty,
+              formatRibuan(price)
+            ) + "\n";
+          total += qty * price;
+        });
+
+        receipt += "--------------------------------\n";
+        receipt += formatRow("Total", "", formatRibuan(total)) + "\n";
+        receipt +=
+          formatRow(
+            "Nominal Bayar",
+            "",
+            formatRibuan(data.order?.cash_received ?? "")
+          ) + "\n";
+        receipt +=
+          formatRow("Kembalian", "", formatRibuan(data.order?.change ?? "")) +
+          "\n";
+        receipt += "================================\n";
+        receipt += "\x1B\x61\x01";
+        receipt += "Terima Kasih!\n";
+        receipt += "================================\n";
+        receipt += "\x1B\x61\x00";
+        receipt += "\n\n\n";
+        receipt += "\x1D\x56\x00"; // cut (may or may not be supported)
+        return receipt;
+      }
+
+      // ----- Main print function -----
+      async function printThermalReceipt(data) {
+        try {
+          setStatus("Mempersiapkan cetak...", true);
+
+          if (!connectedDevice) {
+            // ask to choose device
+            const d = await getPrinter();
+            if (!d) {
+              setStatus("Printer belum dipilih.");
+              return;
+            }
+            const res = await connectToPrinter(d);
+            if (!res) return;
+          } else {
+            // ensure connected
+            if (!connectedDevice.gatt.connected) {
+              setStatus("Menghubungkan ulang ke printer...", true);
+              try {
+                await connectedDevice.gatt.connect();
+                // re-cache server/service/characteristic
+                cachedServer = connectedDevice.gatt;
+                cachedService = await cachedServer.getPrimaryService(
+                  "000018f0-0000-1000-8000-00805f9b34fb"
+                );
+                cachedCharacteristic = await cachedService.getCharacteristic(
+                  "00002af1-0000-1000-8000-00805f9b34fb"
+                );
+              } catch (e) {
+                console.error("Reconnect failed", e);
+                alert("Gagal menghubungkan ulang ke printer.");
+                setStatus("Gagal menghubungkan ulang.");
+                return;
+              }
+            }
+          }
+
+          if (!cachedCharacteristic) {
+            alert(
+              "Karakteristik printer tidak tersedia. Pastikan printer mendukung service/characteristic yang diharapkan."
+            );
+            setStatus("Karakteristik tidak ditemukan.");
+            return;
+          }
+
+          setStatus("Mengirim data ke printer...", true);
+
+          // build ESC/POS text
+          const receiptText = buildReceiptText(data);
+
+          // encode to bytes
+          const encoder = new TextEncoder(); // utf-8
+          const bytes = encoder.encode(receiptText);
+
+          // send in chunks
+          await sendChunks(cachedCharacteristic, bytes, 180);
+          setStatus("Sukses mencetak struk.");
+          console.log("Sukses mencetak struk");
+        } catch (e) {
+          console.error("Failed to print thermal", e);
+          setStatus("Gagal mencetak: " + (e?.message || e));
+          alert("Gagal mencetak. Periksa console untuk detail.");
+        } finally {
+          setTimeout(() => setStatus("Siap"), 700);
+        }
+      }
+
+      // ----- UI handlers -----
+      connectButton.addEventListener("click", async () => {
+        if (!navigator.bluetooth) {
+          alert(
+            "Web Bluetooth tidak tersedia di browser ini. Gunakan Chrome/Edge di HTTPS."
+          );
+          return;
+        }
+        const device = await getPrinter();
+        if (!device) return;
+        await connectToPrinter(device);
+        updateDeviceInfoUI();
+      });
+
+      disconnectButton.addEventListener("click", async () => {
+        await disconnectPrinter();
+        setStatus("Disconnected");
+      });
+
+      printSampleBtn.addEventListener("click", async () => {
+        // sample data
+        const sample = {
+          store: {
+            name: "TOKO SUMBER REJEKI",
+            address: "Jl. Contoh No. 123",
+            phone: "081234567890",
+          },
+          order: {
+            transaction_number: "TRX-20251008-001",
+            payment_method: { name: "TUNAI" },
+            cash_received: 50000,
+            change: 10000,
+          },
+          date: new Date().toLocaleString(),
+          items: [
+            { product: { name: "Beras 5kg", price: 25000 }, quantity: 1 },
+            { product: { name: "Minyak Goreng", price: 15000 }, quantity: 1 },
+          ],
+        };
+        jsonInput.value = JSON.stringify(sample, null, 2);
+        try {
+          const parsed = JSON.parse(jsonInput.value);
+          await printThermalReceipt(parsed);
+        } catch (e) {
+          alert("JSON sample invalid: " + e);
+        }
+      });
+
+      prettyJsonBtn.addEventListener("click", () => {
+        try {
+          const obj = JSON.parse(jsonInput.value || "{}");
+          jsonInput.value = JSON.stringify(obj, null, 2);
+          setStatus("JSON valid dan diformat.");
+        } catch (e) {
+          alert("JSON tidak valid: " + e.message);
+        }
+      });
+
+      fileJson.addEventListener("change", (ev) => {
+        const f = ev.target.files[0];
+        if (!f) return;
+        const reader = new FileReader();
+        reader.onload = () => {
+          jsonInput.value = reader.result;
+          setStatus("File JSON dimuat.");
+        };
+        reader.readAsText(f);
+      });
+
+      // init UI
+      setStatus("Siap");
+      updateDeviceInfoUI();
+    </script>
+  </body>
+</html>

@@ -28,7 +28,7 @@ class TentangController extends Controller
     public function tugasFungsi()
     {
         return view('web.halaman.tugas_fungsi', [
-            'title' => 'Tugas dan Fungsi BUMD'
+            'title' => 'Tugas dan Fungsi PPID'
         ]);
     }
 }

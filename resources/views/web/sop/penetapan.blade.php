@@ -215,34 +215,15 @@
           <div class="col-12">
             <div class="main-card">
               <div class="mb-4">
-                <div class="col-12">
+                <div class="col-12 text-center">
                   <h2 class="display-6 fw-bold text-dark mb-2">
                    {{ $title }}
                   </h2>
                 </div>
               </div>
-              <p>
-                PPID bertanggung jawab menyusun dan melaksanakan kebijakan informasi publik, mengoordinasikan pengumpulan dan verifikasi informasi, serta mengelola Daftar Informasi Publik, sementara PPID Pelaksana fokus pada pelaksanaan teknis di tingkat satuan kerja, yaitu penyimpanan, pendokumentasian, penyediaan, dan pelayanan informasi publik secara langsung. 
-                Tugas dan Tanggung Jawab PPID
-                Sebagai koordinator utama, tugas PPID meliputi:
-                <ol>
-                  <li> Menyusun dan melaksanakan kebijakan: Membuat dan menjalankan kebijakan layanan informasi publik. </li>
-                  <li> Mengoordinasikan pengumpulan informasi: Mengumpulkan dan mengonsolidasikan dokumen informasi publik dari PPID Pelaksana dan unit kerja lainnya. </li>
-                  <li>  Verifikasi dan penentuan informasi: Memverifikasi dokumen informasi publik, menentukan informasi yang bisa diakses publik, dan melakukan uji konsekuensi atas informasi yang dikecualikan.  </li>
-                  <li>Pengelolaan Daftar Informasi Publik: Mengelola, memelihara, dan memutakhirkan Daftar Informasi Publik.</li>
-                  <li>Pengawasan: Melakukan pembinaan, pengawasan, dan evaluasi terhadap pelaksanaan kebijakan informasi publik yang dilakukan oleh PPID Pelaksana. </li>
-                  <li>Pelaporan: Menyusun dan menyampaikan laporan pelaksanaan kebijakan layanan informasi publik. </li>
-                </ol>
-                Tugas dan Tanggung Jawab PPID Pelaksana
-                PPID Pelaksana bertugas membantu PPID dalam menjalankan kebijakan di tingkat perangkat daerah atau unit kerja. Tugasnya adalah: 
-                Pelaksanaan teknis: Mengimplementasikan kebijakan teknis layanan informasi publik di unit kerja masing-masing. 
-                Penyimpanan dan pendokumentasian: 
-                <ol>
-                  <li> Mengelola dan mengamankan informasi, serta melakukan pendokumentasian arsip.</li>
-                  <li>Pelayanan informasi: Menyediakan informasi secara cepat, tepat, dan sederhana sesuai aturan yang berlaku. </li>
-                  <li>Pemutakhiran dan pengembangan: Melakukan pemutakhiran dan pengembangan sistem informasi dan digitalisasi.</li>
-                </ol>
-              </p>
+              <picture>
+                <img src="{{ asset('assets/img/sop/sop-penetapan.png') }}" alt="sop" width="100%">
+              </picture>
             </div>
           </div>
         </div>
