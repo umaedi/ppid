@@ -47,6 +47,8 @@
             <li><a class="dropdown-item" href="{{ route('web.sopPenetapan') }}">SOP Penetapan Dan Pemutakhiran Daftar Informasi Publik</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="{{ route('web.sopKeberatan') }}">SOP Penanganan Keberatan Informasi Publik</a></li>
+            <li><a class="dropdown-item" href="{{ route('web.sopPengujian') }}">SOP Pengujian Konsekuensi</a></li>
+            <li><a class="dropdown-item" href="{{ route('web.sopPendokumentasian') }}">SOP Pendokumentasian Informasi Publikasi</a></li>
           </ul>
             </li>
               <li class="nav-item">

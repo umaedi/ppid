@@ -26,4 +26,18 @@ class SOPController extends Controller
             'title' => 'SOP PENETAPAN DAN PEMUTAKHIRAN DAFTAR INFORMASI PUBLIK'
         ]);
     }
+
+    public function sopPengujian()
+    {
+        return view('web.sop.pengujian', [
+            'title' => 'SOP PENGUJIAN KONSEKUENSI'
+        ]);
+    }
+
+    public function sopPendokumentasian()
+    {
+        return view('web.sop.pendokumentasian', [
+            'title' => 'SOP PENDOKUMENTASIAN INFORMASI PUBLIK'
+        ]);
+    }
 }

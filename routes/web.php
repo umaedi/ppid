@@ -18,6 +18,8 @@ Route::prefix('p')->group(function() {
 Route::get('/sop-pelayanan-informasi-publik', [Web\SOPController::class, 'index'])->name('web.sop');
 Route::get('/sop-penetapan-dan-pemutakhiran-informasi-publik', [Web\SOPController::class, 'sopPenetapan'])->name('web.sopPenetapan');
 Route::get('/sop-penagangan-keberatan-informasi-publik', [Web\SOPController::class, 'sopKeberatan'])->name('web.sopKeberatan');
+Route::get('/sop-pengujian-koneskuensi', [Web\SOPController::class, 'sopPengujian'])->name('web.sopPengujian');
+Route::get('/sop-pendokumentasian-informasi-publik', [Web\SOPController::class, 'sopPendokumentasian'])->name('web.sopPendokumentasian');
 
 Route::get('/dokumen', [Web\DokumenController::class, 'index'])->name('web.dokumen');
 
